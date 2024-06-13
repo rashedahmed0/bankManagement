@@ -19,7 +19,7 @@
         </div>
         <div class="withdraw bg-fuchsia-500 p-10 rounded-lg">
             <h1>Withdraw</h1>
-            <p>$ <span>0</span></p>
+            <p>$ <span id="withdraw-amount">0</span></p>
 
         </div>
         <div class="balance bg-yellow-600 p-10 rounded-lg">
@@ -37,10 +37,10 @@
             <br>
             <button id="deposit-btn" class="bg-teal-200 px-8 py-2 mt-5">Deposit</button>
         </div>
-        <div id="withdraw-input" class="bg-fuchsia-500 p-10">
+        <div id="withdraw" class="bg-fuchsia-500 p-10">
             <h1>Please Withdraw</h1>
-            <input type="text" name="" id="" placeholder="Amount you want to withdraw"
-                class=" mt-5 w-[300px] px-5 py-2"> <br>
+            <input type="text" name="" id="withdraw-input" placeholder="Amount you want to withdraw"
+                class=" mt-5 w-[300px] px-5 py-2 text-black"> <br>
             <button id="withdraw-btn" class="bg-teal-200 px-8 py-2 mt-5">Withdraw</button>
         </div>
     </section>
@@ -54,6 +54,28 @@
 
 
     <script>
+        // withdraw section
+        document.getElementById('withdraw-btn').addEventListener('click', function () {
+            const input = document.getElementById('withdraw-input');
+            const inputValue = input.value;
+            const intInput = parseFloat(inputValue)
+
+            const withdrawAmount = document.getElementById('withdraw-amount');
+            const withdrawInnerText = withdrawAmount.innerText;
+            const intWithdraw = parseFloat(withdrawInnerText);
+            withdrawAmount.innerText = intWithdraw + intInput;
+
+            console.log(typeof intWithdraw);
+
+            // now add deposit amount in balance section 
+            const balance = document.getElementById('balance');
+            const balanceInnerText = balance.innerText;
+            const intBalance = parseFloat(balanceInnerText);
+            balance.innerText = intBalance - intInput;
+
+
+        })
+
         // deposit section
         document.getElementById('deposit-btn').addEventListener('click', function () {
             // find the input value  
