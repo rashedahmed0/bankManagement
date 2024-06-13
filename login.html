@@ -5,32 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-
-
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
-    <h1 class="text-center text-4xl font-bold mb-10">LogIn <span class="text-[purple]">page</span></h1>
+    <div class="container mx-auto px-4">
+        <h1 class="text-center text-4xl font-bold mb-10">LogIn <span class="text-[purple]">page</span></h1>
 
-
-    <section class="login mx-10  p-10 bg-teal-200">
-        <input id="emial" type="email" placeholder="Enter your email" class="py-2 px-32 outline-none"> <br>
-        <input id="password" type="password" placeholder="Enter your password" class="my-5 py-2 px-32 outline-none">
-        <br>
-        <button id="btn" class="border bg-teal-500 px-8 py-2 text-white">Login</button>
-    </section>
-
-
-
-
-
-
-
+        <section class="login mx-auto p-10 bg-teal-200 max-w-md">
+            <input id="email" type="email" placeholder="Enter your email"
+                class="py-2 px-5 md:px-32 outline-none mb-5 block w-full">
+            <input id="password" type="password" placeholder="Enter your password"
+                class="py-2 px-5 md:px-32 outline-none mb-5 block w-full">
+            <button id="btn" class="border bg-teal-500 px-8 py-2 text-white w-full">Login</button>
+        </section>
+    </div>
 
     <script>
         document.getElementById('btn').addEventListener('click', function () {
-            const email = document.getElementById('emial');
+            const email = document.getElementById('email');
             const password = document.getElementById('password');
             console.log('email:', email.value, "password:", password.value);
             if (email.value === 'rialahmed@gmail.com' && password.value === 'rialahmed') {
