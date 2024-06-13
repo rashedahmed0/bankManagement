@@ -13,19 +13,34 @@
     <h1 class="text-center text-4xl font-bold mb-10">Money <span class="text-[purple]">management</span></h1>
 
     <section id="main" class="grid grid-cols-3 gap-4 text-white mx-5 ">
-        <div class="deposit bg-lime-500 p-10  ">
+        <div class="deposit bg-lime-500 p-10 rounded-lg ">
             <h1>Deposit</h1>
             <p>$ <span>0</span></p>
         </div>
-        <div class="withdraw bg-fuchsia-500 p-10">
+        <div class="withdraw bg-fuchsia-500 p-10 rounded-lg">
             <h1>Withdraw</h1>
             <p>$ <span>0</span></p>
 
         </div>
-        <div class="balance bg-yellow-600 p-10">
+        <div class="balance bg-yellow-600 p-10 rounded-lg">
             <h1>Balance</h1>
             <p>$ <span>1500</span></p>
 
+        </div>
+    </section>
+
+    <section id="money-add-container " class=" grid grid-cols-2 gap-4 text-white mx-5 mt-10">
+        <div id="deposit-input " class="bg-lime-500 p-10">
+            <h1>Please Deposit</h1>
+            <input type="text" name="" id="" placeholder="Amount you want to deposit" class=" mt-5 w-[300px] px-5 py-2">
+            <br>
+            <button id="deposit-btn" class="bg-teal-200 px-8 py-2 mt-5">Deposit</button>
+        </div>
+        <div id="withdraw-input" class="bg-fuchsia-500 p-10">
+            <h1>Please Withdraw</h1>
+            <input type="text" name="" id="" placeholder="Amount you want to withdraw"
+                class=" mt-5 w-[300px] px-5 py-2"> <br>
+            <button id="withdraw-btn" class="bg-teal-200 px-8 py-2 mt-5">Withdraw</button>
         </div>
     </section>
 </body>
