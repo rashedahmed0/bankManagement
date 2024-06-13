@@ -71,6 +71,8 @@
             const balanceInnerText = balance.innerText;
             const intBalance = parseFloat(balanceInnerText);
             balance.innerText = intBalance - intInput;
+            input.value = '';
+
         })
 
         // deposit section
