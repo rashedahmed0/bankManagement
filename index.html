@@ -60,18 +60,33 @@
             const input = document.getElementById('withdraw-input');
             const inputValue = input.value;
             const intInput = parseFloat(inputValue)
+            if (isNaN(input) || input <= 0) {
+                alert('Please enter a valid number greater than zero for withdrawal.');
+                return;
+            }
 
-            const withdrawAmount = document.getElementById('withdraw-amount');
-            const withdrawInnerText = withdrawAmount.innerText;
-            const intWithdraw = parseFloat(withdrawInnerText);
-            withdrawAmount.innerText = intWithdraw + intInput;
+
 
             // now add deposit amount in balance section 
             const balance = document.getElementById('balance');
             const balanceInnerText = balance.innerText;
             const intBalance = parseFloat(balanceInnerText);
-            balance.innerText = intBalance - intInput;
+
+            if (intInput > intBalance) {
+                alert('You do not have enough money in your bank account.');
+                return;
+            }
+
             input.value = '';
+            const withdrawAmount = document.getElementById('withdraw-amount');
+            const withdrawInnerText = withdrawAmount.innerText;
+            const intWithdraw = parseFloat(withdrawInnerText);
+
+            withdrawAmount.innerText = intWithdraw + intInput;
+
+
+            balance.innerText = intBalance - intInput;
+
 
         })
 
@@ -81,6 +96,14 @@
             const input = document.getElementById('deposit-input');
             const inputValue = input.value;
             const intInputValue = parseFloat(inputValue);
+
+
+            if (isNaN(input) || input <= 0) {
+                alert('Please enter a valid number greater than zero for withdrawal.');
+                return;
+            }
+
+
 
             // find where add deposit
             const depositSection = document.getElementById('deposit-amount');
