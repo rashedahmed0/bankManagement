@@ -60,10 +60,7 @@
             const input = document.getElementById('withdraw-input');
             const inputValue = input.value;
             const intInput = parseFloat(inputValue)
-            if (isNaN(input) || input <= 0) {
-                alert('Please enter a valid number greater than zero for withdrawal.');
-                return;
-            }
+
 
 
 
@@ -76,6 +73,11 @@
                 alert('You do not have enough money in your bank account.');
                 return;
             }
+            else if (isNaN(input) || input <= 0) {
+                alert('Please enter a valid number greater than zero for withdrawal.');
+                return;
+            }
+
 
             input.value = '';
             const withdrawAmount = document.getElementById('withdraw-amount');
